@@ -15,8 +15,8 @@ const API_PREFIX = 'api/v1';
 
 function setupSwagger(app: INestApplication) {
   const document = new DocumentBuilder()
-    .setTitle('The swagger for Supply')
-    .setDescription('The supply API description')
+    .setTitle('The swagger for NestJS API')
+    .setDescription('The NestJs API description')
     .setVersion('1.0')
     .addBearerAuth(
       { type: 'http', scheme: 'bearer', bearerFormat: 'JWT', in: 'header' },
