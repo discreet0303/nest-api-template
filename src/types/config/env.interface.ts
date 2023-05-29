@@ -1,5 +1,6 @@
 interface IEnvConfig {
   env: string;
+  disableSwagger: boolean;
   http: {
     port: number;
     allowHosts: string[];

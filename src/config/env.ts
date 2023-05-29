@@ -7,6 +7,7 @@ const { ...env } = process.env;
 
 const ENV_CONFIG: IEnvConfig = {
   env: env.NODE_ENV,
+  disableSwagger: env.DISABLE_SWAGGER === 'true',
   http: {
     port: +env.API_PORT,
     allowHosts: env.ALLOW_HOST ? env.ALLOW_HOST.split(',') : [],
