@@ -15,6 +15,8 @@ interface IEnvConfig {
     password: string;
     dbDrop: boolean;
     dbSync: boolean;
+    dbLogging: boolean;
+    dbLogger: 'debug' | 'advanced-console' | 'simple-console' | 'file';
   };
   auth: {
     jwt: {

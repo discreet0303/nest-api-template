@@ -22,6 +22,8 @@ const ENV_CONFIG: IEnvConfig = {
     password: env.DB_PASSWORD,
     dbDrop: env.DB_DROP === 'true',
     dbSync: env.DB_SYNC === 'true',
+    dbLogging: env.DB_LOGGING === 'true',
+    dbLogger: env.DB_LOGGER as any,
   },
   auth: {
     jwt: {
