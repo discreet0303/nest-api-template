@@ -7,7 +7,7 @@ interface IEnvConfig {
     allowCredentials: boolean;
   };
   db: {
-    type: string;
+    type: 'mysql' | 'postgres';
     host: string;
     port: number;
     database: string;

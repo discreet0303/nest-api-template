@@ -5,7 +5,7 @@ import { SnakeNamingStrategy } from 'typeorm-naming-strategies';
 import ENV_CONFIG from './env';
 
 export const OrmModuleConfig: TypeOrmModuleOptions = {
-  type: 'mysql',
+  type: ENV_CONFIG.db.type,
   host: ENV_CONFIG.db.host,
   port: ENV_CONFIG.db.port,
   username: ENV_CONFIG.db.username,
@@ -13,14 +13,14 @@ export const OrmModuleConfig: TypeOrmModuleOptions = {
   database: ENV_CONFIG.db.database,
   entities: [path.join(__dirname, '/../**/*.entity.{js,ts}')],
   namingStrategy: new SnakeNamingStrategy(),
-  dropSchema: false,
-  synchronize: false,
+  dropSchema: ENV_CONFIG.db.dbDrop,
+  synchronize: ENV_CONFIG.db.dbSync,
   logging: ENV_CONFIG.db.dbLogging,
   logger: ENV_CONFIG.db.dbLogger,
 };
 
 const OrmMigrationConfig = new DataSource({
-  type: 'mysql',
+  type: ENV_CONFIG.db.type,
   host: ENV_CONFIG.db.host,
   port: ENV_CONFIG.db.port,
   username: ENV_CONFIG.db.username,
@@ -29,8 +29,8 @@ const OrmMigrationConfig = new DataSource({
   entities: [path.join(__dirname, '/../**/*.entity.{js,ts}')],
   migrations: [path.join(__dirname, '/../database/migrations/*{.ts,.js}')],
   namingStrategy: new SnakeNamingStrategy(),
-  dropSchema: false,
-  synchronize: false,
+  dropSchema: ENV_CONFIG.db.dbDrop,
+  synchronize: ENV_CONFIG.db.dbSync,
 });
 
 export default OrmMigrationConfig;

@@ -14,7 +14,7 @@ const ENV_CONFIG: IEnvConfig = {
     allowCredentials: env.ACCESS_CONTROL_ALLOW_CREDENTIALS === 'true',
   },
   db: {
-    type: env.DB_TYPE,
+    type: env.DB_TYPE as any,
     host: env.DB_HOST,
     port: +env.DB_PORT,
     database: env.DB_DATABASE,

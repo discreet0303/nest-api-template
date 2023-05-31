@@ -31,6 +31,12 @@ chmod 777 '.husky/pre-push'
 yarn
 ```
 
+- If you want to use postgres
+
+```bash
+yarn add pg
+```
+
 ### Set up environment
 
 Copy `.env.example` to setup local `env`
