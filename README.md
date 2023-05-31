@@ -63,16 +63,16 @@ The migration command line only supports `npm`, do not use `yarn`.
 
 ```bash
 # Create a migration
-npm run migration:create --name={filename}
+npm run typeorm:create --name={filename}
 
 # Auto generate a migration
-npm run migration:generate --name={filename}
+npm run typeorm:generate --name={filename}
 
 # Run migration
-npm run migration:run
+npm run typeorm:run
 
 # Revert a migration
-npm run migration:revert
+npm run typeorm:revert
 ```
 
 ### Test
